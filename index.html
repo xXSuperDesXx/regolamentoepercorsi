@@ -85,15 +85,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            .card-title {
-                font-size: 1.25rem;
-            }
-        }
         .language-switcher button {
             background-color: #38a169; /* Slightly darker green */
             color: white;
@@ -110,23 +101,95 @@
             background-color: #2a6f3b; /* Dark green when active */
         }
         [data-lang="en"] { display: none; } /* Default to Italian */
+
+        /* Responsive adjustments */
+        /* Nasconde il menu hamburger su desktop */
+        .hamburger-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .card-title {
+                font-size: 1.25rem;
+            }
+
+            /* Mostra il menu hamburger su mobile */
+            .hamburger-menu {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+
+            /* Nasconde i link di navigazione di default su mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2a6f3b; /* Dark green for expanded menu */
+                position: absolute;
+                top: 100%; /* Sotto l'header */
+                left: 0;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .nav-links li a {
+                display: block; /* Rende i link occupare l'intera larghezza */
+                padding: 0.5rem 1rem;
+                width: 100%;
+            }
+
+            .language-switcher {
+                margin-top: 1rem; /* Spazio tra i link e i pulsanti lingua su mobile */
+                justify-content: center;
+                display: flex; /* Centra i pulsanti lingua */
+                width: 100%;
+            }
+
+            header .container {
+                flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+                justify-content: space-between; /* Sposta il pulsante hamburger a destra */
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
     <!-- Header Section -->
     <header class="bg-green-700 text-white p-6 shadow-md">
-        <div class="container flex justify-between items-center">
+        <div class="container flex justify-between items-center relative">
+            <!-- Pulsante hamburger per mobile -->
+            <button class="hamburger-menu focus:outline-none" onclick="toggleMobileMenu()">
+                &#9776; <!-- Icona hamburger -->
+            </button>
+
+            <!-- Titolo del sito (opzionale, se vuoi un titolo visibile anche in mobile) -->
+            <!-- <h1 class="text-2xl font-bold">Agriturismo Bellavista</h1> -->
             
-            <nav class="flex items-center">
-                <ul class="flex space-x-4 mr-4">
-                    <li><a href="#regolamento" class="hover:text-green-200 transition duration-300 rounded-md" data-lang="it">Regolamento / Regulations</a></li>
-                    <li><a href="#ristoranti" class="hover:text-green-200 transition duration-300 rounded-md" data-lang="it">Ristoranti / Restaurants</a></li>
-                    <li><a href="#percorsi" class="hover:text-green-200 transition duration-300 rounded-md" data-lang="it">Percorsi / Itineraries</a></li>
-                </ul>
-                <div class="language-switcher">
-                    <button id="lang-it" class="active" onclick="setLanguage('it')">ITALIANO</button>
-                    <button id="lang-en" onclick="setLanguage('en')">ENGLISH</button>
+            <nav class="flex items-center w-full md:w-auto">
+                <!-- I link di navigazione saranno nascosti/mostrati con il JavaScript -->
+                <div id="nav-links" class="nav-links md:flex md:space-x-4 mr-4">
+                    <ul class="flex flex-col md:flex-row md:space-x-4 md:mr-4">
+                        <li><a href="#regolamento" class="hover:text-green-200 transition duration-300 rounded-md" >Regolamento / Regulations</a></li>
+                        <li><a href="#ristoranti" class="hover:text-green-200 transition duration-300 rounded-md" >Ristoranti / Restaurants</a></li>
+                        <li><a href="#percorsi" class="hover:text-green-200 transition duration-300 rounded-md" >Percorsi / Itineraries</a></li>
+                    </ul>
                 </div>
             </nav>
         </div>
@@ -134,7 +197,10 @@
 
     <!-- Main Content -->
     <main class="container py-8">
-
+ <div class="language-switcher">
+                        <button id="lang-it" class="active" onclick="setLanguage('it')">ITALIANO</button>
+                        <button id="lang-en" onclick="setLanguage('en')">ENGLISH</button>
+                    </div><br>
         <!-- Regolamento Section -->
         <section id="regolamento" class="mb-12">
             <h2 class="section-title" data-lang="it">Regolamento dell'Agriturismo</h2>
@@ -304,8 +370,8 @@
                     <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immagini/percorso4.png?raw=true" alt="Percorso 4" class="w-full h-auto rounded-md mb-4 cursor-pointer" onclick="openModal('https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immagini/percorso4.png?raw=true')">
                     <p class="text-gray-600" data-lang="it">Un itinerario che combina arte e natura, dal Giardino di Daniel Spoerri al Parco Faunistico del Monte Amiata, fino alla Peschiera di Santa Fiora.</p>
                     <p class="text-gray-600" data-lang="en">An itinerary combining art and nature, from Daniel Spoerri's Garden to the Monte Amiata Wildlife Park, and the Peschiera di Santa Fiora.</p>
-                    <a href="https://www.google.it/maps/dir/Agriturismo+Bellavista,+58038+Seggiano+GR/Giardino+di+Daniel+Spoerri,+Strada+Provinciale+Pescina,+Seggiano,+GR/Merigar+-+Zikhnng,+Arcidosso,+GR/parco+faunistico+del+Monte+Amiata,+Arcidosso,+GR/Monte+Labbro/La+Peschiera+(Santa+Fiora),+Strada+Provinciale+la+Bella,+Santa+Fiora,+GR/@42.8846972,11.4738266,12z/data=!4m38!4m37!1m5!1m1!1s0x13296dce13ab42b1:0x28d116bb6320eb97!2m2!1d11.5637021!2d42.9636792!1m5!1m1!1s0x13296d1df048e82f:0x40a2676341f4f203!2m2!1d11.569676!2d42.921596!1m5!1m1!1s0x132913c72ef75c4b:0xb0f842457c260447!2m2!1d11.542728!2d42.849512!1m5!1m1!1s0x1329120362e4fa9f:0xa88c292b221c91ef!2m2!1d11.5341657!2d42.8281794!1m5!1m1!1s0x13290dfd01740e6d:0x493dd1e48e94816e!2m2!1d11.5258562!2d42.8205221!1m5!1m1!1s0x132913c5af8a44af:0xcd7ed72d1561b68c!2m2!1d11.5839134!2d42.8309744!3e0?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" data-lang="it">Link Google Maps</a>
-                    <!--<a href="https://www.google.it/maps/dir/Agriturismo+Bellavista,+58038+Seggiano+GR/Giardino+di+Daniel+Spoerri,+Strada+Provinciale+Pescina,+Seggiano,+GR/Merigar+-+Zikhnng,+Arcidosso,+GR/parco+faunistico+del+Monte+Amiata,+Arcidosso,+GR/Monte+Labbro/La+Peschiera+(Santa+Fiora),+Strada+Provinciale+la+Bella,+Santa+Fiora,+GR/@42.8846972,11.4738266,12z/data=!4m38!4m37!1m5!1m1!1s0x13296dce13ab42b1:0x28d116bb6320eb97!2m2!1d11.5637021!2d42.9636792!1m5!1m1!1s0x13296d1df048e82f:0x40a2676341f4f203!2m2!1d11.569676!2d42.921596!1m5!1m1!1s0x132913c72ef75c4b:0xb0f842457c260447!2m2!1d11.542728!2d42.849512!1m5!1m1!1s0x1329120362e4fa9f:0xa88c292b221c91ef!2m2!1d11.5341657!2d42.8281794!1m5!1m1!1s0x13290dfd01740e6d:0x493dd1e48e94816e!2m2!1d11.5258562!2d42.8205221!1m5!1m1!1s0x132913c5af8a44af:0xcd7ed72d1561b68c!2m2!1d11.5839134!2d42.8309744!3e0?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" data-lang="en">Open on Maps</a>-->
+                    <a href="https://www.google.it/maps/dir/Agriturismo+Bellavista,+58038+Seggiano+GR/Giardino+di+Daniel+Spoerri,+Strada+Provinciale+Pescina,+Seggiano,+GR/Merigar+-+Zikhnng,+Arcidosso,+GR/parco+faunistico+del+Monte+Amiata,+Arcidosso,+GR/Monte+Labbro/La+Peschiera+(Santa+Fiora),+Strada+Provinciale+la+Bella,+Santa+Fiora,+GR/@42.8846972,11.4738266,12z/data=!4m38!4m37!1m5!1m1!1s0x13296d1df048e82f:0x40a2676341f4f203!2m2!1d11.569676!2d42.921596!1m5!1m1!1s0x132913c72ef75c4b:0xb0f842457c260447!2m2!1d11.542728!2d42.849512!1m5!1m1!1s0x1329120362e4fa9f:0xa88c292b221c91ef!2m2!1d11.5341657!2d42.8281794!1m5!1m1!1s0x13290dfd01740e6d:0x493dd1e48e94816e!2m2!1d11.5258562!2d42.8205221!1m5!1m1!1s0x132913c5af8a44af:0xcd7ed72d1561b68c!2m2!1d11.5839134!2d42.8309744!3e0?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" data-lang="it">Link Google Maps</a>
+                    <!--<a href="https://www.google.it/maps/dir/Agriturismo+Bellavista,+58038+Seggiano+GR/Giardino+di+Daniel+Spoerri,+Strada+Provinciale+Pescina,+Seggiano,+GR/Merigar+-+Zikhnng,+Arcidosso,+GR/parco+faunistico+del+Monte+Amiata,+Arcidosso,+GR/Monte+Labbro/La+Peschiera+(Santa+Fiora),+Strada+Provinciale+la+Bella,+Santa+Fiora,+GR/@42.8846972,11.4738266,12z/data=!4m38!4m37!1m5!1m1!1s0x13296d1df048e82f:0x40a2676341f4f203!2m2!1d11.569676!2d42.921596!1m5!1m1!1s0x132913c72ef75c4b:0xb0f842457c260447!2m2!1d11.542728!2d42.849512!1m5!1m1!1s0x1329120362e4fa9f:0xa88c292b221c91ef!2m2!1d11.5341657!2d42.8281794!1m5!1m1!1s0x13290dfd01740e6d:0x493dd1e48e94816e!2m2!1d11.5258562!2d42.8205221!1m5!1m1!1s0x132913c5af8a44af:0xcd7ed72d1561b68c!2m2!1d11.5839134!2d42.8309744!3e0?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" data-lang="en">Open on Maps</a>-->
                 </div>
                 <!-- Percorso 5 -->
                 <div class="card">
@@ -352,13 +418,19 @@
                 element.style.display = 'block';
             });
 
-            // Handle inline elements
-            document.querySelectorAll('nav ul li a').forEach(a => {
-                a.style.display = 'inline-block';
-            });
-            document.querySelectorAll('header h1').forEach(h1 => {
-                h1.style.display = 'inline-block';
-            });
+            // Handle inline elements, but only for desktop view
+            // In mobile, these are handled by flex-direction: column and display: block on .nav-links li a
+            if (window.innerWidth > 768) { // Only apply this for larger screens
+                document.querySelectorAll('nav ul li a').forEach(a => {
+                    a.style.display = 'inline-block';
+                });
+                // This H1 element does not exist in the current header structure, so it's commented out
+                /*
+                document.querySelectorAll('header h1').forEach(h1 => {
+                    h1.style.display = 'inline-block';
+                });
+                */
+            }
             document.querySelectorAll('.btn-primary').forEach(btn => {
                 btn.style.display = 'inline-block';
             });
@@ -372,10 +444,25 @@
             localStorage.setItem('selectedLang', lang);
         }
 
+        // Funzione per gestire il menu mobile
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('open');
+        }
+
+
         // Set initial language on load
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('selectedLang') || 'it'; // Default to Italian
             setLanguage(savedLang);
+
+            // Close mobile menu if resized to desktop view
+            window.addEventListener('resize', () => {
+                const navLinks = document.getElementById('nav-links');
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('open');
+                }
+            });
         });
     </script>
 </body>
