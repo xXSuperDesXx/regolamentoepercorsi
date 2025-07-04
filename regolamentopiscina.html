@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regolamento Piscina - Agriturismo Bellavista</title>
+    <!-- Carica Tailwind CSS per uno stile moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Stili personalizzati per il font Inter e il colore di sfondo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Un colore di sfondo chiaro e piacevole */
+        }
+        /* Nasconde le sezioni della lingua per default, verranno mostrate tramite JS */
+        .lang-section {
+            display: none;
+        }
+        /* Stile per il pulsante della lingua attiva */
+        .lang-button.active {
+            background-color: #3b82f6; /* Blu di Tailwind 500 */ 
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-3xl w-full text-center">
+        <h1 class="text-4xl font-bold text-blue-700 mb-6">Regolamento della Piscina</h1>
+
+        <!-- Selettore di lingua -->
+        <div class="mb-6 flex justify-center space-x-4">
+            <button id="lang-it" class="lang-button py-2 px-5 rounded-full border border-blue-400 text-blue-700 hover:bg-blue-100 transition duration-300 ease-in-out">Italiano</button>
+            <button id="lang-en" class="lang-button py-2 px-5 rounded-full border border-blue-400 text-blue-700 hover:bg-blue-100 transition duration-300 ease-in-out">English</button>
+        </div>
+
+        <!-- Contenuto in Italiano -->
+        <div id="content-it" class="lang-section text-left text-gray-800 space-y-4 mb-6">
+            <!-- <h2 class="text-2xl font-semibold text-blue-600">Agriturismo Bellavista</h2>  -->
+            <p class="text-lg text-gray-700">
+                REGOLAMENTO PER L'UTILIZZO DELLA PISCINA DA PARTE DEGLI OSPITI DEL NOSTRO AGRITURISMO
+            </p>
+            <p class="font-bold">Gli ospiti sono tenuti al rispetto delle seguenti regole:</p>
+            <p class="text-red-600 font-bold">
+                ATTENZIONE PISCINA NON SORVEGLIATA. La direzione non risponde in alcun modo degli eventuali
+                incidenti, infortuni, o altro, che possano accadere ai bagnanti per comportamenti loro imputabili, soprattutto
+                se in violazione del presente regolamento.
+            </p>
+            <ul class="list-disc list-inside ml-4 space-y-2">
+                <li>È consentito l'accesso ai soli ospiti dell'agriturismo.</li>
+                <li>È possibile accedere alla piscina nei seguenti orari: 09,00-19,30</li>
+                <li>È vietato l'accesso ai minori di 12 anni ed ai portatori di handicap non accompagnati per rischio di annegamento data l'assenza dell'assistente bagnanti.</li>
+                <li>È obbligatoria la presenza di personale addetto ad interventi di pronto soccorso, siccome la vigilanza non è continuativa, verificarne la presenza prima di accedere alla piscina.</li>
+                <li>La profondità della piscina è di metri 1,40 in tutte le sue parti.</li>
+                <li>È vietato tuffarsi e correre sul piano vasca.</li>
+                <li>Si raccomanda di non bagnarsi a meno di tre ore dal consumo di un pasto.</li>
+                <li>È vietato fumare e non è possibile, sul piano vasca e in piscina, consumare cibi o bevande.</li>
+                <li>È obbligatorio accedere alla piscina passando dalla doccia che va utilizzata prima di entrare in acqua.</li>
+                <li>È obbligatorio l'uso di zoccoli in legno o ciabatte in gomma nei percorsi a piedi nudi.</li>
+                <li>È obbligatorio l'uso della cuffia prima dell'ingresso in vasca.</li>
+                <li>È disponibile un servizio igienico nelle vicinanze del piano vasca all'interno del salone comune.</li>
+                <li>È vietato lo svolgimento di attività in apnea senza la presenza di un istruttore abilitato.</li>
+                <li>È vietato introdurre animali in acqua e bordo piscina.</li>
+                <li>È vietato l'uso di creme solari e oli per capelli prima dell'ingresso in vasca.</li>
+                <li>È vietato introdurre in piscina bottiglie, oggetti in vetro e altri oggetti non strettamente attinenti alla balneazione.</li>
+                <li>È fatto divieto di balneazione in particolari condizioni atmosferiche (temporali, vento forte).</li>
+                <li>È fatto divieto di entrare in piscina alle persone in stato psicofisico alterato (ubriachezza, alterazioni da stupefacenti ecc.) o anche in evidenti condizioni precarie di salute, tali da rappresentare un rischio per l'incolumità del soggetto stesso.</li>
+                <li>Per bambini di età inferiore ai 3 anni, nonché per gli utenti fisiologicamente incontinenti è obbligatorio l'utilizzo di appositi costumi contenitivi.</li>
+                <li>A norma di legge è proibita la doccia e il bagno senza costume.</li>
+                <li>La cassetta di primo soccorso si trova nel salone comune. Utilizzare solo in caso di emergenza e in caso di utilizzo darne comunicazione al gestore in modo che possa reintegrarla.</li>
+                <li>Dato che, secondo la legge Regionale, il responsabile della piscina dovrebbe adottare provvedimenti nei confronti dei bagnanti che non osservano le prescrizioni, richiediamo la vostra cortese collaborazione al rispetto della normativa cui siamo soggetti. Grazie.</li>
+            </ul>
+            <p class="mt-4">
+                Responsabile Della Piscina e addetto Al primo Soccorso<br>
+                Anna Barbara Demontis telefono 3487556267
+            </p>
+        </div>
+
+        <!-- Contenuto in Inglese -->
+        <div id="content-en" class="lang-section text-left text-gray-800 space-y-4 mb-6">
+          <!--   <h2 class="text-2xl font-semibold text-blue-600">Agriturismo Bellavista</h2> -->
+            <p class="text-lg text-gray-700">
+                RULES FOR THE USE OF THE SWIMMING POOL BY GUESTS OF OUR FACILITY
+            </p>
+            <p class="font-bold">Guests are required to comply with the following rules:</p>
+            <p class="text-red-600 font-bold">
+                WARNING: UNSUPERVISED POOL. The management is not responsible in any way for any accidents,
+                injuries, or other incidents that may occur to bathers due to their own attributable behavior, especially if in
+                violation of these regulations.
+            </p>
+            <ul class="list-disc list-inside ml-4 space-y-2">
+                <li>Access is permitted only to guests of the farmhouse.</li>
+                <li>The pool is open during the following hours: 09:00 AM - 7:30 PM.</li>
+                <li>Access is forbidden to unaccompanied minors under 12 years of age and unaccompanied individuals with disabilities due to the risk of drowning, given the absence of a lifeguard.</li>
+                <li>The presence of first aid personnel is mandatory; as supervision is not continuous, please verify their presence before entering the pool.</li>
+                <li>The pool depth is 1.40 meters (4.6 feet) throughout.</li>
+                <li>Diving and running on the pool deck are forbidden.</li>
+                <li>It's recommended not to swim within three hours of eating a meal.</li>
+                <li>Smoking is forbidden, and consuming food or drinks on the pool deck or in the pool is not allowed.</li>
+                <li>It is mandatory to access the pool by passing through the shower, which must be used before entering the water.</li>
+                <li>The use of wooden clogs or rubber flip-flops is mandatory on barefoot paths.</li>
+                <li>The use of a swimming cap is mandatory before entering the pool.</li>
+                <li>A restroom is available near the pool deck inside the common lounge.</li>
+                <li>Performing freediving activities without the presence of a qualified instructor is forbidden.</li>
+                <li>Introducing animals into the water or by the poolside is forbidden.</li>
+                <li>The use of sun creams and hair oils before entering the pool is forbidden.</li>
+                <li>Introducing bottles, glass objects, and other items not strictly related to swimming into the pool is forbidden.</li>
+                <li>Swimming is prohibited in particular weather conditions (thunderstorms, strong winds).</li>
+                <li>Individuals in an altered psychophysical state (drunk, under the influence of drugs, etc.) or in evident precarious health conditions, such as to pose a risk to their own safety, are prohibited from entering the pool.</li>
+                <li>The management is in no way responsible for any incidents, injuries, or other occurrences that may happen to swimmers due to their own attributable behavior, especially if in violation of these regulations.</li>
+                <li>For children under 3 years of age, as well as for physiologically incontinent users, the use of appropriate containment swimsuits is mandatory.</li>
+                <li>By law, showering and swimming without a swimsuit are prohibited.</li>
+                <li>First Aid Kit: The first aid kit is located in the common lounge. Use only in case of emergency. In case of use, inform the manager so it can be restocked.</li>
+                <li>In accordance with Regional Law, the pool manager is required to take action against bathers who fail to observe the regulations. Therefore, we kindly request your cooperation in adhering to the rules to which we are subject. Thank you.</li>
+            </ul>
+            <p class="mt-4">
+                The Pool Manager and First Aid Responder<br>
+                Anna Barbara Demontis telefono 3487556267
+            </p>
+        </div>
+
+        <!-- Link per tornare alla pagina principale -->
+        <a href="index.html" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+            Torna alla Pagina Principale
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langItButton = document.getElementById('lang-it');
+            const langEnButton = document.getElementById('lang-en');
+            const contentIt = document.getElementById('content-it');
+            const contentEn = document.getElementById('content-en');
+
+            function setLanguage(lang) {
+                if (lang === 'it') {
+                    contentIt.style.display = 'block';
+                    contentEn.style.display = 'none';
+                    langItButton.classList.add('active');
+                    langEnButton.classList.remove('active');
+                    localStorage.setItem('lang', 'it'); // Salva la preferenza della lingua
+                } else {
+                    contentIt.style.display = 'none';
+                    contentEn.style.display = 'block';
+                    langEnButton.classList.add('active');
+                    langItButton.classList.remove('active');
+                    localStorage.setItem('lang', 'en'); // Salva la preferenza della lingua
+                }
+            }
+
+            // Imposta la lingua in base alla preferenza salvata o al default 'it'
+            const savedLang = localStorage.getItem('lang') || 'it';
+            setLanguage(savedLang);
+
+            langItButton.addEventListener('click', () => setLanguage('it'));
+            langEnButton.addEventListener('click', () => setLanguage('en'));
+        });
+    </script>
+</body>
+</html>
