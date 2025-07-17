@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olio Extravergine Biologico - Agriturismo Bellavista</title>
+    <!-- Carica Tailwind CSS per uno stile moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Stili personalizzati per il font Inter e il colore di sfondo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Un colore di sfondo chiaro e piacevole */
+        }
+        /* Nasconde le sezioni della lingua per default, verranno mostrate tramite JS */
+        .lang-section {
+            display: none;
+        }
+        /* Stile per il pulsante della lingua attiva */
+        .lang-button.active {
+            background-color: #4CAF50; /* Un verde più scuro per il tema olio */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Stili per il carosello */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0; /* Impedisce alle immagini di rimpicciolirsi */
+            height: 500px; /* Altezza fissa per le immagini del carosello */
+            object-fit: cover; /* Assicura che l'immagine copra l'area senza distorsioni */
+        }
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-dot.active {
+            background-color: #4CAF50; /* Verde attivo */
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full text-center">
+        <h1 class="text-4xl font-bold text-green-800 mb-6">Il Nostro Olio Extravergine Biologico di Olivastra Seggianese</h1>
+
+        <!-- Selettore di lingua -->
+        <div class="mb-6 flex justify-center space-x-4">
+            <button id="lang-it" class="lang-button py-2 px-5 rounded-full border border-green-600 text-green-800 hover:bg-green-100 transition duration-300 ease-in-out">Italiano</button>
+            <button id="lang-en" class="lang-button py-2 px-5 rounded-full border border-green-600 text-green-800 hover:bg-green-100 transition duration-300 ease-in-out">English</button>
+        </div>
+
+        <!-- Pulsante "Torna alla Pagina Principale" in alto -->
+        <a href="index.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg mb-8">
+            Torna alla Pagina Principale - Return to the Homepage
+        </a>
+
+        <!-- Carosello Immagini -->
+        <div class="carousel-container mb-8">
+            <div class="carousel-images" id="carousel-images">
+                <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immaginiolio/olivecuore.jpg?raw=true" alt="Ulivi Amiata 1">
+                <img src="https://www.agriturismo-bellavista.it/sites/agriturismo-bellavista.it/files/immagini/DSC_0313.JPG" alt="Ulivi Amiata 2">
+                <img src="https://www.agriturismo-bellavista.it/sites/agriturismo-bellavista.it/files/immagini/DSC_0312.JPG" alt="Ulivi Amiata 3">
+                <img src="https://www.agriturismo-bellavista.it/sites/agriturismo-bellavista.it/files/immagini/DSC_0644.JPG" alt="Ulivi Amiata 4">
+                <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immaginiolio/oliofrantoio.jpg?raw=true" alt="Ulivi Amiata 5">
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+
+        <!-- Contenuto in Italiano -->
+        <div id="content-it" class="lang-section text-left text-gray-800 space-y-8 mb-6">
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">L'Olio Extravergine Biologico dal Cuore dell'Amiata</h2>
+                <p class="text-lg text-gray-700">
+                    Dalla nostra Azienda Agricola Biologica Bellavista, ai piedi del Monte Amiata, nasce un olio extravergine d'oliva di eccellenza.
+                </p>
+            </div>
+
+            <div>
+                <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immaginiolio/immaginiolio.jpg?raw=true" alt="Immagine Raccolta Olive" class="w-full h-auto">
+                <br>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">La Nostra Qualità</h2>
+                <p class="text-lg text-gray-700">
+                    Raccogliamo le olive a metà ottobre, prima dell'invaiatura, per un olio ricco di sostanze organolettiche. Il nostro frantoio aziendale garantisce la frangitura in poche ore, preservando freschezza e nutrienti.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">L'Unicità dell'Olivastra Seggianese</h2>
+               <!-- <img src="https://placehold.co/600x300/4CAF50/ffffff?text=Oliva+Seggianese" alt="Immagine Oliva Seggianese" class="w-full h-auto rounded-lg mb-4 shadow-md">-->
+                <p class="text-lg text-gray-700">
+                    Il segreto è l'Olivastra Seggianese, cultivar autoctona e resiliente del Monte Amiata. Questa "oliva di montagna" conferisce al nostro extravergine un'acidità eccezionalmente bassa (0,15%), alta concentrazione di polifenoli (circa 384 mg/kg) ed elevati acidi grassi insaturi.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Gusto Inconfondibile, Benefici Straordinari</h2>
+                <!--<img src="https://placehold.co/600x300/388E3C/ffffff?text=Olio+e+Cibo" alt="Immagine Olio e Cibo" class="w-full h-auto rounded-lg mb-4 shadow-md">-->
+                <p class="text-lg text-gray-700">
+                    Il nostro olio monovarietale ha un sapore dolce e un profumo fruttato, senza amaro, con una nota piccante finale. Ideale per esaltare pesce, insalate, legumi e selvaggina, è sorprendente anche in maionese e gelato. L'Olivastra Seggianese è un toccasana per la salute, prevenendo disturbi digestivi e cardiovascolari, abbassando il colesterolo LDL e agendo come emolliente cutaneo.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Un Tesoro Riconosciuto</h2>
+               <!-- <img src="https://placehold.co/600x300/2E7D32/ffffff?text=Certificazione+DOP" alt="Immagine Certificazione DOP" class="w-full h-auto rounded-lg mb-4 shadow-md">-->
+                <p class="text-lg text-gray-700">
+                    Dal 2009, il nostro olio extravergine è orgogliosamente riconosciuto con il marchio DOP Olivastra Seggianese, simbolo della sua autenticità e del legame con il territorio.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Il Territorio che Ispira</h2>
+               <!-- <img src="https://placehold.co/600x300/1B5E20/ffffff?text=Paesaggio+Toscano" alt="Immagine Paesaggio Toscano" class="w-full h-auto rounded-lg mb-4 shadow-md">-->
+                <p class="text-lg text-gray-700">
+                    I nostri uliveti secolari si estendono fino a 600 metri, in un ambiente incontaminato che rende il nostro olio un capolavoro di natura e tradizione.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Scegli il nostro olio Biologico</h2>
+                <img src="https://www.agriturismo-bellavista.it/sites/agriturismo-bellavista.it/files/immagini/DSC_0301.JPG" alt="Immagine Bottiglia Olio" class="w-full h-auto rounded-lg mb-4 shadow-md">
+                <p class="text-lg text-gray-700">
+                    Qualità, tradizione e benessere in ogni goccia. 
+                    <br> <br> <b>Acquista il nostro olio.</b> Per informazioni sul nostro olio extravergine d'oliva Biologico, rivolgiti al personale in Agriturismo o contattaci su Whatsapp al <a href="tel:+393487556267" style="color: blue;">3487556267</a><br>
+                </p>
+            </div>
+        </div>
+
+        <!-- Contenuto in Inglese -->
+        <div id="content-en" class="lang-section text-left text-gray-800 space-y-8 mb-6">
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Organic Extra Virgin Olive Oil from the Heart of Amiata</h2>
+                <p class="text-lg text-gray-700">
+                    From our Bellavista Organic Farm, at the foot of Mount Amiata, an excellent extra virgin olive oil is born.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Our Quality</h2>
+                <p class="text-lg text-gray-700">
+                    We harvest the olives in mid-October, before veraison, for an oil rich in organoleptic substances. Our on-site oil mill guarantees pressing within a few hours, preserving freshness and nutrients. <br>
+                <br>    
+                <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immaginiolio/immaginiolio.jpg?raw=true" alt="Image Olive Harvest" class="w-full h-auto">
+                </p><br>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">The Uniqueness of Olivastra Seggianese</h2>
+             <!-- <img src="https://placehold.co/600x300/4CAF50/ffffff?text=Seggianese+Olive" alt="Image Seggianese Olive" class="w-full h-auto rounded-lg mb-4 shadow-md"> -->
+                <p class="text-lg text-gray-700">
+                    The secret is Olivastra Seggianese, an autochthonous and resilient cultivar from Mount Amiata. This "mountain olive" gives our extra virgin olive oil an exceptionally low acidity (0.15%), a high concentration of polyphenols (around 384 mg/kg), and high unsaturated fatty acids.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Unmistakable Taste, Extraordinary Benefits</h2>
+               <!-- <img src="https://placehold.co/600x300/388E3C/ffffff?text=Oil+and+Food" alt="Image Oil and Food" class="w-full h-auto rounded-lg mb-4 shadow-md"> -->
+                <p class="text-lg text-gray-700">
+                    Our monovarietal oil has a sweet flavor and a fruity aroma, without bitterness, with a final spicy note. Ideal for enhancing fish, salads, legumes, and game, it is also surprising in mayonnaise and ice cream. Olivastra Seggianese is a panacea for health, preventing digestive and cardiovascular disorders, lowering LDL cholesterol, and acting as a skin emollient.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">A Recognized Treasure</h2>
+              <!--  <img src="https://placehold.co/600x300/2E7D32/ffffff?text=DOP+Certification" alt="Image DOP Certification" class="w-full h-auto rounded-lg mb-4 shadow-md"> -->
+                <p class="text-lg text-gray-700">
+                    Since 2009, our extra virgin olive oil has been proudly recognized with the DOP Olivastra Seggianese mark, a symbol of its authenticity and connection to the territory.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">The Territory that Inspires</h2>
+              <!--  <img src="https://placehold.co/600x300/1B5E20/ffffff?text=Tuscan+Landscape" alt="Image Tuscan Landscape" class="w-full h-auto rounded-lg mb-4 shadow-md"> -->
+                <p class="text-lg text-gray-700">
+                    Our centuries-old olive groves extend up to 600 meters, in an uncontaminated environment that makes our oil a masterpiece of nature and tradition.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold text-green-700 mb-2">Choose our Organic oil</h2>
+                <img src="https://www.agriturismo-bellavista.it/sites/agriturismo-bellavista.it/files/immagini/DSC_0301.JPG" alt="Image Olive Oil Bottle" class="w-full h-auto rounded-lg mb-4 shadow-md">
+                <p class="text-lg text-gray-700">
+                    Quality, tradition, and well-being in every drop. 
+                    <br> <br> <b> Purchase our olive oil. </b>To learn more about our Organic extra virgin olive oil, please speak with the staff at the Agriturismo or send a message on WhatsApp to <a href="tel:+393487556267" style="color: blue;">3487556267</a><br>
+
+                </p>
+            </div>
+        </div>
+
+        <!-- Pulsante "Torna alla Pagina Principale" in basso -->
+        <a href="index.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg mt-8">
+            Torna alla Pagina Principale - Return to the Homepage
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langItButton = document.getElementById('lang-it');
+            const langEnButton = document.getElementById('lang-en');
+            const contentIt = document.getElementById('content-it');
+            const contentEn = document.getElementById('content-en');
+
+            function setLanguage(lang) {
+                if (lang === 'it') {
+                    contentIt.style.display = 'block';
+                    contentEn.style.display = 'none';
+                    langItButton.classList.add('active');
+                    langEnButton.classList.remove('active');
+                    localStorage.setItem('lang_olio', 'it'); // Salva la preferenza della lingua per questa pagina
+                } else {
+                    contentIt.style.display = 'none';
+                    contentEn.style.display = 'block';
+                    langEnButton.classList.add('active');
+                    langItButton.classList.remove('active');
+                    localStorage.setItem('lang_olio', 'en'); // Salva la preferenza della lingua per questa pagina
+                }
+            }
+
+            // Imposta la lingua in base alla preferenza salvata o al default 'it'
+            const savedLang = localStorage.getItem('lang_olio') || 'it';
+            setLanguage(savedLang);
+
+            langItButton.addEventListener('click', () => setLanguage('it'));
+            langEnButton.addEventListener('click', () => setLanguage('en'));
+
+            // Codice per il carosello
+            const carouselImages = document.getElementById('carousel-images');
+            const carouselDotsContainer = document.getElementById('carousel-dots');
+            const images = carouselImages.querySelectorAll('img');
+            let currentIndex = 0;
+            const intervalTime = 3000; // 3 secondi per slide
+
+            // Crea i puntini di navigazione
+            images.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                carouselDotsContainer.appendChild(dot);
+            });
+
+            const dots = carouselDotsContainer.querySelectorAll('.carousel-dot');
+
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                carouselImages.style.transform = `translateX(${offset}%)`;
+
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            }
+
+            // Avvia lo scorrimento automatico
+            setInterval(nextSlide, intervalTime);
+
+            // Assicurati che il carosello si aggiorni correttamente al ridimensionamento della finestra
+            window.addEventListener('resize', updateCarousel);
+        });
+    </script>
+</body>
+</html>
