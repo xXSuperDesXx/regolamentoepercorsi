@@ -100,7 +100,7 @@
         .language-switcher button.active {
             background-color: #2a6f3b; /* Dark green when active */
         }
-        [data-lang="en"] { display: none; } /* Default to Italian */
+        [data-lang="it"] { display: none; } /* Default to Italian */
 
         /* Responsive adjustments */
         /* Nasconde il menu hamburger su desktop */
@@ -167,6 +167,45 @@
                 justify-content: space-between; /* Sposta il pulsante hamburger a destra */
             }
         }
+
+        /* Stili per il banner dei cookie */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .cookie-banner p {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .cookie-banner button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem;
+        }
+        .cookie-banner button:hover {
+            background-color: #45a049;
+        }
+        .cookie-banner .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -216,7 +255,7 @@
                         <strong>Servizi Aggiuntivi:</strong><br>
                         Il riassetto delle camere è disponibile su richiesta.<br>
                         Il cambio della biancheria è settimanale, se richiesto prima dei 7 giorni è a pagamento.<br><br>
-                        <strong>Regolamento della Struttura:</strong> La nostra struttura è ad uso esclusivo di chi vi soggiorna. Pertanto, è vietato ospitare presso i propri appartamenti e in piscina amici o conoscenti. Apprezziamo la vostra comprensione e collaborazione nel mantenere la tranquillità e l'esclusività dell'ambiente.<a href="https://xxsuperdesxx.github.io/regolamentoepercorsi/regolamentopiscina.html" style="color: blue;">LEGGI IL REGOLAMENTO DELLA PISCINA CLICCANDO QUI</a><br><br>
+                        <strong>Regolamento della Struttura:</strong> La nostra struttura è ad uso esclusivo di chi vi soggiorna. Pertanto, è vietato ospitare presso i propri appartamenti e in piscina amici o conoscenti. Apprezziamo la vostra comprensione e collaborazione nel mantenere la tranquillità e l'esclusività dell'ambiente.<a href="https://xxsuperdesxx.github.io/regolamentoepercorsi/regolamentopiscina.html" style="color: blue;"> LEGGI IL REGOLAMENTO DELLA PISCINA CLICCANDO QUI</a><br><br>
                         <strong>SUPERMERCATI:</strong> Per le vostre necessità quotidiane, i supermercati più vicini sono:<br>
                         Seggiano (circa 5 minuti in auto): <a href="https://maps.app.goo.gl/Ve3rew7nGAPpJyoi7" style="color: blue;">Coop in Via Grossetana, 6</a><br>
                         Castel del Piano (circa 10 minuti in auto):<br>
@@ -240,7 +279,7 @@
                         <strong>Additional Services:</strong><br>
                         Room tidying is available upon request.<br>
                         Linen change is weekly; if requested before 7 days, it is subject to a fee.<br><br>
-                        <strong>Property Rules:</strong> Our property is for the exclusive use of its guests. Therefore, it is forbidden to host friends or acquaintances in your apartments or by the pool. We appreciate your understanding and cooperation in maintaining the tranquility and exclusivity of the environment. <a href="https://xxsuperdesxx.github.io/regolamentoepercorsi/regolamentopiscina.html" style="color: blue;">READ THE POOL RULES BY CLICKING HERE</a><br><br>
+                        <strong>Property Rules:</strong> Our property is for the exclusive use of its guests. Therefore, it is forbidden to host friends or acquaintances in your apartments or by the pool. We appreciate your understanding and cooperation in maintaining the tranquility and exclusivity of the environment. <a href="https://xxsuperdesxx.github.io/regolamentoepercorsi/regolamentopiscina.html" style="color: blue;"> READ THE POOL RULES BY CLICKING HERE</a><br><br>
                         <strong>SUPERMARKETS:</strong> For your daily needs, the nearest supermarkets are:<br>
                         Seggiano (approx. 5 minutes by car): <a href="https://maps.app.goo.gl/Ve3rew7nGAPpJyoi7" style="color: blue;">Coop in Via Grossetana, 6</a><br>
                         Castel del Piano (approx. 10 minutes by car):<br>
@@ -391,7 +430,7 @@
             <h2 class="section-title" data-lang="it">Eventi:</h2>
             <h2 class="section-title" data-lang="en">Local Events:</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Evento 1 -->
+                                <!-- Evento 1 -->
                 <div class="card text-center">
                     <h3 class="card-title" data-lang="it">Trekking Monte Amiata</h3>
                     <h3 class="card-title" data-lang="en">Trekking Monte Amiata</h3>
@@ -415,9 +454,21 @@
                     <a href="https://maps.app.goo.gl/xCjtTDB1hQp9XZst9" target="_blank" class="btn-primary" data-lang="it">Link Maps</a>
                     <!--<a href="https://maps.app.goo.gl/xCjtTDB1hQp9XZst9" target="_blank" class="btn-primary" data-lang="en">Link Maps</a>-->
                 </div>
-                
+
+                <!-- Evento 3 -->
+                <div class="card text-center">
+                    <h3 class="card-title" data-lang="it">Servizio Dogsitter in Agriturismo</h3>
+                    <h3 class="card-title" data-lang="en">Dog-sitting Service on the Farmhouse</h3>
+                    <img src="https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immagini/dogsitter_it.jpg?raw=true" alt="Percorso 1" class="w-full h-auto rounded-md mb-4 cursor-pointer" onclick="openModal('https://github.com/xXSuperDesXx/regolamentoepercorsi/blob/main/immagini/dogsitter_it.jpg?raw=true')">
+                    <p class="text-gray-600" data-lang="it"> Relax per te, divertimento per il tuo amico a 4 zampe! Servizio disponibile direttamente in struttura tutti i giorni <strong> su prenotazione </strong>. 
+                    <br><strong> Cosa offriamo:</strong> Passeggiate nella natura, Attivita' ludiche e giochi, Pausa snack e momenti di coccole, Custodia temporanea in ambiente tranquillo e sorvegliato <br><strong>Per qualsiasi informazione: </strong> invia un messaggio su WhatsApp al <a href="tel:+393281260782" style="color: blue;">3281260782</a></p> </p>
+                    <p class="text-gray-600" data-lang="en"> Relaxation for you, fun for your four-legged friend! Service available directly at the facility every day <strong> by reservation </strong>. 
+                    <br><strong> What we offer:</strong> Nature walks, Fun activities and games, Snack breaks and cuddle time, Temporary custody in a quiet and supervised environment <br><strong>For any information: </strong> Send a message on WhatsApp to <a href="tel:+393281260782" style="color: blue;">3281260782</a></p>
+                    <a href="https://dogscoprirefiutando.it/" target="_blank" class="btn-primary" data-lang="it">Link dogscoprirefiutando.it</a>
+                    <!--<a href="https://dogscoprirefiutando.it/" target="_blank" class="btn-primary" data-lang="en">Link dogscoprirefiutando.it</a>-->
+                </div>
         </section>
-        
+
         <footer class="text-center text-green-700 text-sm mt-10 pb-6">
             <p>&copy; 2025 Agriturismo Bellavista. Tutti i diritti riservati.</p>
         </footer>
@@ -429,6 +480,70 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01">
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <p data-lang="it">Questo sito utilizza i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare accetti l'uso dei cookie. Per maggiori informazioni, consulta la nostra <a href="#" class="text-blue-400 underline" onclick="toggleCookiePolicySection(event)">Cookie Policy</a>.</p>
+        <p data-lang="en">This website uses cookies to enhance your browsing experience. By continuing to browse, you accept the use of cookies. For more information, please refer to our <a href="#" class="text-blue-400 underline" onclick="toggleCookiePolicySection(event)">Cookie Policy</a>.</p>
+        <div class="button-group">
+            <button onclick="acceptCookies()" data-lang="it">Accetta</button>
+            <button onclick="acceptCookies()" data-lang="en">Accept</button>
+            <button onclick="declineCookies()" data-lang="it">Rifiuta</button>
+            <button onclick="declineCookies()" data-lang="en">Decline</button>
+        </div>
+    </div>
+
+    <!-- Sezione Cookie Policy (puoi espanderla con il testo completo della tua policy) -->
+    <section id="cookie-policy-section" class="container py-8 mb-12" style="display: none;">
+        <h2 class="section-title" data-lang="it">Cookie Policy</h2>
+        <h2 class="section-title" data-lang="en">Cookie Policy</h2>
+        <div class="card p-6 md:p-8">
+            <div data-lang="it">
+                <p class="text-lg text-gray-700">
+                    <strong>Cosa sono i cookie?</strong><br>
+                    I cookie sono piccoli file di testo che vengono memorizzati sul tuo computer o dispositivo mobile quando visiti un sito web. Vengono utilizzati per far funzionare i siti web in modo più efficiente, per migliorare l'esperienza dell'utente e per fornire informazioni ai proprietari del sito.<br><br>
+                    <strong>Come utilizziamo i cookie?</strong><br>
+                    Utilizziamo i cookie per diverse finalità:<br>
+                    <ul>
+                        <li><strong>Cookie tecnici:</strong> Essenziali per il funzionamento del sito e per consentirti di navigare e utilizzare le sue funzionalità.</li>
+                        <li><strong>Cookie di preferenza:</strong> Ci permettono di ricordare le tue scelte (ad esempio, la lingua preferita) per offrirti un'esperienza più personalizzata.</li>
+                        <li><strong>Cookie di analisi:</strong> Utilizziamo strumenti di analisi (come Google Analytics) per raccogliere informazioni su come gli utenti interagiscono con il nostro sito, quali pagine visitano più spesso e se riscontrano errori. Queste informazioni ci aiutano a migliorare il sito.</li>
+                        <li><strong>Cookie di terze parti:</strong> Il nostro sito potrebbe includere funzionalità fornite da terze parti (ad esempio, mappe di Google Maps, video di YouTube, pulsanti di condivisione social) che potrebbero impostare i propri cookie. Non abbiamo controllo su questi cookie.</li>
+                    </ul><br>
+                    <strong>Gestione dei cookie:</strong><br>
+                    Puoi controllare e/o eliminare i cookie a tuo piacimento. Puoi eliminare tutti i cookie già presenti sul tuo computer e impostare la maggior parte dei browser in modo da bloccarne l'installazione. Se scegli di farlo, potresti dover modificare manualmente alcune preferenze ogni volta che visiti il nostro sito e alcuni servizi o funzionalità potrebbero non funzionare correttamente.<br><br>
+                    Per maggiori informazioni su come gestire i cookie nel tuo browser, consulta le guide specifiche:<br>
+                    <a href="https://support.google.com/chrome/answer/95647?hl=it" target="_blank" class="text-blue-400 underline">Google Chrome</a><br>
+                    <a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie" target="_blank" class="text-blue-400 underline">Mozilla Firefox</a><br>
+                    <a href="https://support.microsoft.com/it-it/windows/eliminare-e-gestire-i-cookie-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" class="text-blue-400 underline">Microsoft Edge</a><br>
+                    <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" class="text-blue-400 underline">Safari</a><br><br>
+                    Continuando a navigare su questo sito, acconsenti all'utilizzo dei cookie in conformità con la nostra Cookie Policy.
+                </p>
+            </div>
+            <div data-lang="en">
+                <p class="text-lg text-gray-700">
+                    <strong>What are cookies?</strong><br>
+                    Cookies are small text files that are stored on your computer or mobile device when you visit a website. They are used to make websites work more efficiently, to improve the user experience, and to provide information to website owners.<br><br>
+                    <strong>How do we use cookies?</strong><br>
+                    We use cookies for various purposes:<br>
+                    <ul>
+                        <li><strong>Technical cookies:</strong> Essential for the website to function and to allow you to navigate and use its features.</li>
+                        <li><strong>Preference cookies:</strong> They allow us to remember your choices (e.g., preferred language) to offer you a more personalized experience.</li>
+                        <li><strong>Analytical cookies:</strong> We use analytical tools (such as Google Analytics) to collect information about how users interact with our site, which pages they visit most often, and if they encounter errors. This information helps us improve the site.</li>
+                        <li><strong>Third-party cookies:</strong> Our site may include features provided by third parties (e.g., Google Maps, YouTube videos, social sharing buttons) that may set their own cookies. We have no control over these cookies.</li>
+                    </ul><br>
+                    <strong>Managing cookies:</strong><br>
+                    You can control and/or delete cookies as you wish. You can delete all cookies already on your computer and set most browsers to prevent their installation. If you choose to do this, you may have to manually adjust some preferences every time you visit our site, and some services or features may not work correctly.<br><br>
+                    For more information on how to manage cookies in your browser, please refer to the specific guides:<br>
+                    <a href="https://support.google.com/chrome/answer/95647?hl=it" target="_blank" class="text-blue-400 underline">Google Chrome</a><br>
+                    <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" class="text-blue-400 underline">Mozilla Firefox</a><br>
+                    <a href="https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" class="text-blue-400 underline">Microsoft Edge</a><br>
+                    <a href="https://support.apple.com/en-us/guide/safari/sfri11471/mac" target="_blank" class="text-blue-400 underline">Safari</a><br><br>
+                    By continuing to browse this site, you consent to the use of cookies in accordance with our Cookie Policy.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Funzione per aprire il modal dell'immagine a schermo intero
@@ -485,12 +600,48 @@
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('open');
         }
+        
+        // Funzione per mostrare/nascondere la sezione della Cookie Policy
+        function toggleCookiePolicySection(event) {
+            event.preventDefault(); // Impedisce al browser di saltare all'ancora
+            const cookiePolicySection = document.getElementById('cookie-policy-section');
+            if (cookiePolicySection.style.display === 'none' || cookiePolicySection.style.display === '') {
+                cookiePolicySection.style.display = 'block';
+            } else {
+                cookiePolicySection.style.display = 'none';
+            }
+            // Scorri alla sezione se la stai mostrando
+            if (cookiePolicySection.style.display === 'block') {
+                cookiePolicySection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
 
+        // Funzioni per la gestione dei cookie
+        function showCookieBanner() {
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            if (!cookieConsent) {
+                document.getElementById('cookieBanner').style.display = 'flex';
+            }
+        }
 
-        // Set initial language on load
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+            // Qui puoi aggiungere la logica per caricare script di tracciamento o di terze parti
+            // Esempio: loadGoogleAnalytics();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').style.display = 'none';
+            // Qui puoi aggiungere la logica per bloccare script di tracciamento o di terze parti
+        }
+
+        // Set initial language on load and show cookie banner
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('selectedLang') || 'it'; // Default to Italian
             setLanguage(savedLang);
+            showCookieBanner(); // Mostra il banner dei cookie al caricamento
 
             // Close mobile menu if resized to desktop view
             window.addEventListener('resize', () => {
